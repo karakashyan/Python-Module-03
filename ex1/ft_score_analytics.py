@@ -2,12 +2,12 @@ import sys
 
 print("=== Player Score Analytics ===")
 scores = []
-for i in range(1, len(sys.argv)):
+for arg in sys.argv[1:]:
     try:
-        s = int(sys.argv[i])
+        s = int(arg)
         scores.append(s)
     except ValueError:
-        print(f"Invalid parameter: '{sys.argv[i]}'")
+        print(f"Invalid parameter: '{arg}'")
 
 if len(scores) == 0:
     print("No scores provided. Usage: python3 "

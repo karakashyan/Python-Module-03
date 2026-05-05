@@ -7,7 +7,9 @@ if len(sys.argv) == 1:
     print("No arguments provided!")
 else:
     print(f"Arguments received: {len(sys.argv) - 1}")
-    for i in range(1, len(sys.argv)):
-        print(f"Argument {i}: {sys.argv[i]}")
+    count = 1
+    for arg in sys.argv[1:]:
+        print(f"Argument {count}: {arg}")
+        count += 1
 
 print("Total arguments:", len(sys.argv))

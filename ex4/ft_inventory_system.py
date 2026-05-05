@@ -2,13 +2,13 @@ import sys
 
 print("=== Inventory System Analysis ===")
 inventory = {}
-for arg in range(1, len(sys.argv)):
-    parts = sys.argv[arg].split(":")
+for arg in sys.argv[1:]:
+    parts = arg.split(":")
     if len(parts) != 2:
-        print(f"Error- invalid parameter '{sys.argv[arg]}'")
+        print(f"Error - invalid parameter '{arg}'")
         continue
     if parts[0] in inventory:
-        print(f"Redundant item '{parts[0]}'- discarding")
+        print(f"Redundant item '{parts[0]}' - discarding")
         continue
     try:
         inventory.update({parts[0]: int(parts[1])})
